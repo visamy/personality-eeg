@@ -1,4 +1,6 @@
+/notebooks/.ipynb_checkpoints/*
 /src.egg-info
+/src/src.egg-info
 /data/*
 !/data/raw/
 /data/raw/*

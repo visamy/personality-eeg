@@ -46,7 +46,7 @@ def preprocess_signal(raw, info, band = [0.1,45], scale=True):
         - scales with mean scaler (StandardScaler)
     Returns: np_array of shape (1,14,datapoints)
     """
-    raw = raw.filter(l_freq=band[0], h_freq=band[1])
+    raw = raw.filter(l_freq=band[0], h_freq=band[1], verbose=0)
     filt_signal = raw.get_data() # FILTERED SIGNAL
 
     if scale == True:

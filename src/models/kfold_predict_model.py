@@ -23,7 +23,7 @@ def save_results(config, fold, test_loss, test_accuracy, test_precision, test_re
         df_new = pd.DataFrame([[cfg["experiment_desc"], fold, config["dataset"]["save_suffix"][1:], config["dataset"]["window_length"],
                              cfg["epochs"], cfg["batch_size"], cfg["dropout"], cfg["learning_rate"], cfg["trait"],
                              test_loss, test_accuracy, test_precision, test_recall, test_f1, test_kappa]], columns=column_names)
-        df = df.append(df_new) 
+        df = pd.concat([df, df_new])
     
     df.to_csv(cfg["save_path"] + "predictions//" + cfg["experiment_desc"] + "_kfold" + ".csv", index=False)
 
