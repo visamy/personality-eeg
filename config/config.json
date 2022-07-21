@@ -1,0 +1,63 @@
+{
+    "traits" : {
+        "Agreeableness": "agreeab",
+        "Extroversion": "extrov",
+        "Conscientiousness": "consc",
+        "Emotional Stability": "emstab",
+        "Openness": "open" 
+    },
+
+	"dataset": {
+		"eeg_path": "data//raw//", 
+        "personality_path": "data//Participants_Personality.xlsx",
+        "sampling_frequency": 128,
+        "window_length": 3,
+        "window_overlap": 0,
+        "preprocess": true,
+        "bandpass":[1,45],
+        "scale": true,
+        "split": [70,15,15],
+        "save_path": "data//",
+        "save_suffix": "_bpscaled"
+	},
+
+    "hyperparameter_tuning": {
+        "dropout": [0.1,0.7],
+        "dropout_type": ["Dropout", "SpatialDropout2D"],
+        "learning_rate": [0.00001,0.01],
+        "temporal_filters": [3,10],
+        "spatial_filters_depth": [1,4],
+        "directory": "reports//tuning",
+        "tuner_objective": "val_loss",
+        "max_epochs": 1000,
+        "epochs": 1
+    },
+	
+    "train": {
+        "experiment_desc": "EEGNet-8,2_Agreeableness_bpscaled-1,45Hz",
+        "trait": "Agreeableness",
+        "epochs": 100,
+        "early_stop_epochs": 50,
+        "learning_rate": 0.0001,
+        "batch_size": 256,
+        "dropout": 0.1,
+        "dropout_type": "Dropout",
+        "temporal_filters": 8,
+        "spatial_filters_depth": 2,
+        "optimizer_metric": ["accuracy"],
+        "save_path": "reports//",
+        "save_best_model": true,
+        "model_save_path": "models//",
+        "model_save_metric": "val_loss",
+        "save_figure": true,
+        "k_folds": 5,
+        "weights_save_path": "models//weights//"
+    },
+
+    "attributions": {
+        "attributions_path": "models//attributions//",
+        "figures_path": "reports//attributions//"
+    }
+
+}
+

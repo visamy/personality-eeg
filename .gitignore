@@ -1,0 +1,5 @@
+/src.egg-info
+/data/*
+!/data/raw/
+/data/raw/*
+!.gitkeep

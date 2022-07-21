@@ -1,0 +1,2 @@
+experiment_desc,data_type,window_length,epochs,batch_size,dropout,learning_rate,trait,test_loss,test_accuracy
+"EEGNet-8,2_Agreeableness_bpscaled-1,45Hz",bpscaled,3,100,256,0.1,0.0001,Agreeableness,0.4009179472923279,0.8523604869842529
