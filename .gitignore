@@ -1,7 +1,13 @@
-/notebooks/.ipynb_checkpoints/*
-/src.egg-info
-/src/src.egg-info
 /data/*
+# data
 !/data/raw/
 /data/raw/*
 !.gitkeep
+
+# jupyter notebooks 
+/notebooks/.ipynb_checkpoints
+
+# src
+/src.egg-info
+/src/src.egg-info
+/src/__pycache__
