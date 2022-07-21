@@ -6,7 +6,7 @@ import tensorflow as tf
 import numpy as np
 import warnings, logging
 
-from deepexplain.tf.v1_x.utils import make_batches, slice_arrays, to_list, unpack_singleton, placeholder_from_data, original_grad
+from src.deepexplain.tf.v1_x.utils import make_batches, slice_arrays, to_list, unpack_singleton, placeholder_from_data, original_grad
 # -----------------------------------------------------------------------------
 # ATTRIBUTION METHODS BASE CLASSES
 # -----------------------------------------------------------------------------

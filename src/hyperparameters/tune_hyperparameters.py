@@ -44,7 +44,8 @@ def define_tuner(config, tuner_name):
                         factor = 10,
                         hyperband_iterations=1,
                         directory=cfg["directory"],
-                        project_name=config["train"]["experiment_desc"]
+                        project_name=config["train"]["experiment_desc"],
+                        overwrite=True
         )
 
     elif tuner_name == "bayesian":
@@ -56,7 +57,8 @@ def define_tuner(config, tuner_name):
                         beta=2.6,
                         seed=737,
                         directory=cfg["directory"],
-                        project_name=config["train"]["experiment_desc"]
+                        project_name=config["train"]["experiment_desc"],
+                        overwrite=True
         )
     elif tuner_name == "random":
         tuner = kt.RandomSearch(
@@ -65,7 +67,8 @@ def define_tuner(config, tuner_name):
                         max_trials=10,
                         seed=737,
                         directory=cfg["directory"],
-                        project_name=config["train"]["experiment_desc"]
+                        project_name=config["train"]["experiment_desc"],
+                        overwrite=True
         )
 
     return tuner

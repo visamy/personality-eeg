@@ -12,9 +12,9 @@ from tqdm import tqdm
 
 from tensorflow.python.ops import nn_grad, math_grad
 
-from deepexplain.tf.v2_x.utils import make_batches, slice_arrays, to_list, unpack_singleton, placeholder_from_data, original_grad, activation
-from deepexplain.tf.v2_x.baseClasses import GradientBasedMethod, PerturbationBasedMethod
-from deepexplain.tf.v2_x import constants
+from src.deepexplain.tf.v2_x.utils import make_batches, slice_arrays, to_list, unpack_singleton, placeholder_from_data, original_grad, activation
+from src.deepexplain.tf.v2_x.baseClasses import GradientBasedMethod, PerturbationBasedMethod
+from src.deepexplain.tf.v2_x import constants
 
 
 # -----------------------------------------------------------------------------

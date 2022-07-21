@@ -1,7 +1,7 @@
 import numpy as np
 import tensorflow as tf
 import warnings
-from deepexplain.tf.v1_x import constants
+from src.deepexplain.tf.v1_x import constants
 from tensorflow.python.ops import nn_grad, math_grad
 
 
