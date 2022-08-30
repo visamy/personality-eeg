@@ -54,7 +54,9 @@ python -m src.data.make_dataset --config "config//config.json"
 To reproduce the three types of dataset used for the paper, edit the `"dataset"` object in `config.json` as specified in the paper.
 
 ## 2. (Optional) Hyperparameter tuning
-This step is not required for reproducing the results. To tune the hyperparameters of the model, run the script
+This step is not required for reproducing the results. 
+
+To tune the hyperparameters of the model, run the script
 ```
 python -m src.hyperparameters.tune_hyperparameters --tuner "hyperband"
 ```
