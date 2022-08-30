@@ -107,3 +107,6 @@ python -m src.visualizations.attributions --model_path "models//trained_model_na
 The path to the targeted trained model has to be specified.
 
 The calculated attributions are saved in `models/attributions`, while the generated figures from the attributions are saved in `reports/attributions/`.
+
+## Pretrained Models
+Additionally, five pretrained models, one for each personality trait, are provided in `models/pretrained_models/`.
