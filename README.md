@@ -36,16 +36,37 @@ The required files from the [AMIGOS dataset](http://www.eecs.qmul.ac.uk/mmv/data
 The .mat files need be stored in `/data/raw` and the "Participants_Personality.xlsx" spreadsheet file need be stored in `/data/`.
 
 ## EEGNet
-The main model used 
+The model used for training is EEGNet as implemented in `https://github.com/vlawhern/arl-eegmodels`.
 
-DeepExplain
+# Reproduce results
+All the needed configuration are set in the `config/config.json` file, to be modified as needed.
 
+## 1. Create Dataset
+Run the script
+```
+python -m src.data.make_dataset --config "config//config.json"
+```
 
+To reproduce the three types of dataset used for the paper, edit the `"dataset"` object in `config.json` as specified in the paper.
 
-Startup
-python -m venv env
+## 2. Train
+For the k-fold training, run the script
+```
+python -m src.models.kfold_train_model --config "config//config.json"
+```
 
-source env/Scripts/activate
+Note that training is separate for each personality trait. To obtain results for all five traits, edit the `"train"` object in `config.json` by changing the `"trait"` element.
 
-pip install -r requirements.txt
-pip install -e .
+Alternatively, a simple 1-fold training is also implemented and can be run with the script:
+```
+python -m src.models.train_model --c "experiments//exp01.json"
+```
+Other config files can be used for experimental results. An `exp01.json` example is provided in `experiments/`.
+
+## 3. Predict
+To predict the results of the k-fold trained models, run the script
+```
+python -m src.models.kfold_predict_model --config "config//config.json"
+```
+Loss, Accuracy, Precision, Recall, F1, and Kappa metrics are calculated on the test set for each k-fold and on average over all folds. The results are saved in a `.csv` file in `reports/predictions`
+
